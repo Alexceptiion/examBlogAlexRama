@@ -1,0 +1,18 @@
+#btncreer{
+box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+-webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+-moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.btnform{
+    float: right;
+}
+#btnpublier{
+    box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+}
+#btnsauvegarder{
+    box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+}

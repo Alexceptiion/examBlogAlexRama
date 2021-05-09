@@ -2,36 +2,29 @@
 require "connect.php";
 require "helpers.php";
 
+if(!existGET("idArticle")){
+    redirectTo("formulaire.php");
+}
+$id = $_GET["idArticle"];
 $errors = [];
 
-// On verifie que la methode post existe, si elle existe on execute la requete
- if($_SERVER["REQUEST_METHOD"] === "POST"){
-     if(existPOST("titreArticle")){
-        $sql = "INSERT INTO `article` 
-        (titreArticle, dateCreationArticle, datePublicationArticle, statutArticle, contenuArticle) 
-        VALUES (:titreArticle, '2018/10/10', '2019/10/10', 'Publié', 'area')";
+//Vérifier et obtenir la ligne de base de données
+$stmt = $db->prepare("SELECT * FROM blog WHERE id=idArticle");
 
-        $stmt = $db->prepare($sql);
-        $res = $stmt->execute([
-           ":titreArticle" => htmlspecialchars($_POST["titreArticle"])
-           //":contenuArticle" => htmlspecialchars($_POST["contenuArticle"]),
-           //"dateCreationArticle" => $_POST["dateCreationArticle"],
-           //"statutArticle" => htmlspecialchars($_POST["statutArticle"]),
-           //":idCategorie" => htmlspecialchars($_POST["idCategorie"]),
-           //':idTag' => htmlspecialchars($_POST["idTag"])
-        ]);
+$article = null;
+if($stmt->execute([$id])){
+    $article = $stmt->fetch();
+}else{
+    $errors[] = "C'est vachement pas sympas SUR 20";
+}
 
-    // on verifie si la reponse est vrai ou fausse
-    //     if ($res=== true){
-             redirectTo("index.php");
-    //     }else{
-    //         $errors[] = "Erreur lors de la sauvegarde des données. Veuillez réessayer plus tard";
-    //     }
-        }else{
-            $errors[] = "Veuillez remplir tous les champs";
-        }
+if($_SERVER["REQUEST_METHOD"] === "POST"){
+    if(isset($_POST["modify"])){
+
     }
+}
 ?>
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -39,7 +32,6 @@ $errors = [];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Créeer un article</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -52,7 +44,7 @@ $errors = [];
             </div>
         <?php } ?>
         <div class="card p-4 w-50">
-            <form method="POST" class="leformulaire">
+            <form method="POST">
             <!--titre article-->
                 <div class="mb">
                     <input type="text" placeholder="Titre de l'article" name="titreArticle">   
@@ -86,9 +78,9 @@ $errors = [];
                     </select>
                 </div>    
                
-               <div class="btnform">
-                <button type="submit" class="mt-3 btn btn-primary" id="btnpublier">Publier</button>
-                <button type="submit" class="mt-3 btn btn-primary" id=btnsauvegarder>Sauvegarder</button>
+               <div>
+                <button type="submit" class="mt-3 btn btn-primary">Publier</button>
+                <button type="submit" class="mt-3 btn btn-primary">Sauvegarder</button>
                </div> 
 
             </form>
