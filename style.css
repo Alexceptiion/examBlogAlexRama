@@ -1,18 +1,25 @@
-#btncreer{
-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
--webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
--moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+table,
+td,
+th {
+  border: 1px solid black;
 }
-.btnform{
-    float: right;
+#btncreer {
+  box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
 }
-#btnpublier{
-    box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+#btnpublier {
+  box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
 }
-#btnsauvegarder{
-    box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+#btnsauvegarder {
+  box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+}
+#btnsupprimer {
+  box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
 }
