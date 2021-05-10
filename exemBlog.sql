@@ -1,7 +1,9 @@
 #------------------------------------------------------------
 #        Script MySQL.
 #------------------------------------------------------------
-
+DROP DATABASE IF EXISTS `blog`;
+CREATE DATABASE IF NOT EXISTS `blog` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `blog`;
 
 #------------------------------------------------------------
 # Table: Categorie
@@ -57,4 +59,3 @@ CREATE TABLE Contenir(
 	,CONSTRAINT Contenir_Tag_FK FOREIGN KEY (idTags) REFERENCES Tag(idTags)
 	,CONSTRAINT Contenir_Article0_FK FOREIGN KEY (idArticle) REFERENCES Article(idArticle)
 )ENGINE=InnoDB;
-
