@@ -70,12 +70,19 @@ $errors = [];
                 </div><br>
                 <!--Contenu-->
                 <div>
-                    <textarea name="contenuArticle" id="" cols="30" rows="10"></textarea>
+                    <textarea name="contenuArticle" id="" cols="30" rows="14"></textarea>
                 </div><br>
+
+
+                <div class="btnform">
+                <button type="submit" class="btn btn-outline-info" id="btnpublier">Publier</button>&nbsp;&nbsp;<br><br>
+                <button type="submit" class="btn btn-outline-warning" id=btnsauvegarder>Sauvegarder</button>&nbsp;&nbsp;
+               </div>
+            </div>    
 
                 <!--categorie-->
             <div class="deplacer">   
-               <!-- <div> -->
+               <div class="categorieclasse">
                     <label for="">Categorie</label><br/>
                     <select name="idCategorie" id="">
                         <option value="">Choisir une categorie</option>
@@ -84,7 +91,7 @@ $errors = [];
                         <option>Sweets</option>
                         <option>Lolipop</option>
                     </select>
-               <!-- </div> -->
+                </div><br>
 
                  <!--Tag-->
                <!--  <div> -->
@@ -97,12 +104,7 @@ $errors = [];
                         <option>Fruits</option>
                     </select><br>
                <!-- </div>  -->  
-               
-               <div class="btnform">
-                <button type="submit" class="btn btn-outline-info" id="btnpublier">Publier</button>&nbsp;&nbsp;
-                <button type="submit" class="btn btn-outline-warning" id=btnsauvegarder>Sauvegarder</button>&nbsp;&nbsp;
-               </div>
-            </div>     
+                
         
     </form>
         </div>

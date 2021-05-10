@@ -43,17 +43,30 @@ th {
   float: right;
 }
 .deplacer {
-  float: right;
-  margin: -5px;
-  padding: 5px;
-  top: 205px;
+  position: relative;
+  left: 250px;
+  bottom: 424px;
+  width: 230px;
+  height: 220px;
+  border: 1px solid black;
 }
 h1 {
   font-family: "Kdam Thmor", cursive;
 }
 input {
+  position: relative;
   width: 150%;
+  right: 120px;
 }
 textarea {
+  position: relative;
   width: 150%;
+  right: 120px;
+}
+.btnform {
+  position: relative;
+  left: 250px;
+  bottom: 418px;
+  height: 110px;
+  border: 1px solid black;
 }
