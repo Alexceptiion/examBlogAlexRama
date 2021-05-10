@@ -86,7 +86,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                         <button type="submit" name="delete" class="btn btn-danger">Supprimer</button>
                     </form>
                     <form method="POST">
-                        <button type="submit" name="cancel" class="btn btn-info">Annuler</button>
+                        <button type="submit" name="cancel" class="btn btn-primary">Annuler</button>
                     </form>
                 </div>
             </div>

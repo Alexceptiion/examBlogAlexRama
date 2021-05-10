@@ -43,11 +43,8 @@ $blog = $stmt->fetchAll();
                     <td></td>
                     <td>
                     <a href="modify.php?id=<?= $article["idArticle"] ?>" class="btn btn-outline-info">Modifier</a>
-<<<<<<< HEAD
                     <a href="view.php?id=<?= $article["idArticle"] ?>" class="btn btn-outline-warning">View</a>
-=======
-                    <a href="view.php?id=<?= $article["idArticle"] ?>" class="btn btn-outline-info">View</a>
->>>>>>> 84e98bb444a66b60c3629aa22b5e602b498bf454
+
                 </tr>
             <?php } ?>
         </table>

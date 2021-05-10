@@ -101,14 +101,10 @@ $errors = [];
                <div class="btnform">
                 <button type="submit" class="btn btn-outline-info" id="btnpublier">Publier</button>
                 <button type="submit" class="btn btn-outline-warning" id=btnsauvegarder>Sauvegarder</button>
-<<<<<<< HEAD
                </div>
             </div>     
-=======
-               </div> 
->>>>>>> 84e98bb444a66b60c3629aa22b5e602b498bf454
-
-            </form>
+        
+    </form>
         </div>
     </div>
 </body>
