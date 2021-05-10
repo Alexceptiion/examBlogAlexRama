@@ -8,8 +8,8 @@ $errors = [];
  if($_SERVER["REQUEST_METHOD"] === "POST"){
      if(existPOST("titreArticle")){
         $sql = "INSERT INTO `article` 
-        (titreArticle, dateCreationArticle, datePublicationArticle, statutArticle, contenuArticle) 
-        VALUES (:titreArticle, '2018/10/10', '2019/10/10', 'Publié', 'area')";
+        (titreArticle, dateCreationArticle, statutArticle, contenuArticle) 
+        VALUES (:titreArticle, CURDATE(), 'Publié', 'area')";
 
         $stmt = $db->prepare($sql);
         $res = $stmt->execute([
@@ -30,6 +30,17 @@ $errors = [];
         }else{
             $errors[] = "Veuillez remplir tous les champs";
         }
+    }
+
+    // modify
+    if(isset($_GET['id'])){
+        $idArticleToEdit = $_GET["id"];
+        $stmt = $db->prepare("SELECT * from article WHERE idArticle = :idArticleToEdit;");
+        $stmt->execute([
+            ':idArticleToEdit' => $idArticleToEdit
+         ]);
+         $blogEdit = $stmt->fetchAll(); 
+         //print_r($blogEdit);
     }
 ?>
 <html lang="fr">
@@ -58,12 +69,13 @@ $errors = [];
                     <input type="text" placeholder="Titre de l'article" name="titreArticle">   
                 </div>
                 <!--Contenu-->
-                <!-- <div>
+                <div>
                     <textarea name="contenuArticle" id="" cols="30" rows="10"></textarea>
-                </div> -->
+                </div>
 
                 <!--categorie-->
-                <div>
+            <div class="deplacer">   
+               <!-- <div> -->
                     <label for="">Categorie</label><br/>
                     <select name="idCategorie" id="">
                         <option value="">Choisir une categorie</option>
@@ -72,10 +84,10 @@ $errors = [];
                         <option>Sweets</option>
                         <option>Lolipop</option>
                     </select>
-                </div>
+               <!-- </div> -->
 
                  <!--Tag-->
-                 <div>
+               <!--  <div> -->
                     <label for="">Tags</label><br/>
                     <select name="idTag" id="">
                         <option value="">Choisir un Tag</option>
@@ -84,12 +96,13 @@ $errors = [];
                         <option>Sugar</option>
                         <option>Fruits</option>
                     </select>
-                </div>    
+               <!-- </div>  -->  
                
                <div class="btnform">
-                <button type="submit" class="mt-3 btn btn-primary" id="btnpublier">Publier</button>
-                <button type="submit" class="mt-3 btn btn-primary" id=btnsauvegarder>Sauvegarder</button>
-               </div> 
+                <button type="submit" class="btn btn-outline-info" id="btnpublier">Publier</button>
+                <button type="submit" class="btn btn-outline-warning" id=btnsauvegarder>Sauvegarder</button>
+               </div>
+            </div>     
 
             </form>
         </div>
