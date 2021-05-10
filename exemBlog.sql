@@ -59,4 +59,3 @@ CREATE TABLE Contenir(
 	,CONSTRAINT Contenir_Tag_FK FOREIGN KEY (idTags) REFERENCES Tag(idTags)
 	,CONSTRAINT Contenir_Article0_FK FOREIGN KEY (idArticle) REFERENCES Article(idArticle)
 )ENGINE=InnoDB;
-
