@@ -142,11 +142,18 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 </div>    
                
                <div>
+<<<<<<< HEAD
                 <button type="submit" class="mt-3 btn btn-primary" id="publierbtn">Publier</button>
                 <button type="submit" class="mt-3 btn btn-primary" id="sauvegarderbtn">Sauvegarder</button>
                 <a class="btn btn-success active" href="delete.php?id=<?= $valueIdArticle ?>" id="supprimerbtn">Supprimer</a>
                </div>
             </div>      
+=======
+                <button type="submit" class="mt-3 btn btn-primary">Publier</button>
+                <button type="submit" class="mt-3 btn btn-primary">Sauvegarder</button>
+                <a href="modify.php?id=<?= $article["idArticle"]?>"class="btn btn-outline-danger" id="btnsupprimer" >Supprimer</a>
+               </div> 
+>>>>>>> 84e98bb444a66b60c3629aa22b5e602b498bf454
 
             </form>
         </div>
