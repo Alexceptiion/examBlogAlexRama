@@ -13,7 +13,7 @@ $id = $_GET["id"];
 $errors = [];
 
 // Check & get db row
-$stmt = $db->prepare("SELECT * FROM article LEFT JOIN categorie ON article.idCategorie = categorie.idCategorie;");
+$stmt = $db->prepare("SELECT * FROM article LEFT JOIN categorie ON article.idCategorie = categorie.idCategorie WHERE idArticle = ?;");
 
 $article = null;
 if($stmt->execute([$id])){
@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     if(isset($_POST["delete"])){
         // Check the CSRF token
         if(existPOST("token") && hash_equals($token, $_POST['token'])){
-            $stmt = $db->prepare("DELETE  FROM article WHERE id=?");
+            $stmt = $db->prepare("DELETE FROM article WHERE idArticle = ? LIMIT 1;");
             if($stmt->execute([$id])){
                 redirectTo("index.php");
             }else{
@@ -83,10 +83,10 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                         <?php // Gestion du token CSRF ?>
                         <input type="hidden" name="token" value="<?= $token ?>"/>
 
-                        <button type="submit" name="delete" class="btn btn-danger">Supprimer</button>
+                        <button type="submit" name="delete" class="btn btn-outline-danger">Supprimer</button>
                     </form>
                     <form method="POST">
-                        <button type="submit" name="cancel" class="btn btn-primary">Annuler</button>
+                        <button type="submit" name="cancel" class="btn btn-outline-info">Annuler</button>
                     </form>
                 </div>
             </div>

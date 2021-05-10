@@ -104,7 +104,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 <?= $error ?>
             </div>
         <?php } ?>
-        <div class="card p-4 w-50">
+        <div class="">
             <form method="POST">
             <!--titre article-->
                 <div class="mb">
@@ -142,9 +142,9 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 </div>    
                
                <div>
-                <button type="submit" class="mt-3 btn btn-primary" id="publierbtn">Publier</button>
-                <button type="submit" class="mt-3 btn btn-primary" id="sauvegarderbtn">Sauvegarder</button>
-                <a class="btn btn-success active" href="delete.php?id=<?= $valueIdArticle ?>" id="supprimerbtn">Supprimer</a>
+                <button type="submit" class="btn btn-outline-info" id="publierbtn">Publier</button>
+                <button type="submit" class="btn btn-outline-success" id="sauvegarderbtn">Sauvegarder</button>
+                <a class="btn btn-outline-danger" href="delete.php?id=<?= $valueIdArticle ?>" id="supprimerbtn">Supprimer</a>
                </div>
             </div>      
 

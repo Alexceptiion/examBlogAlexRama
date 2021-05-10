@@ -1,8 +1,8 @@
-table,
+/* table,
 td,
 th {
   border: 1px solid black;
-}
+} */
 #btncreer {
   box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
@@ -47,4 +47,13 @@ th {
   margin: -5px;
   padding: 5px;
   top: 205px;
+}
+h1 {
+  font-family: "Kdam Thmor", cursive;
+}
+input {
+  width: 150%;
+}
+textarea {
+  width: 150%;
 }

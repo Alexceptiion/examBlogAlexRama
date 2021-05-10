@@ -62,7 +62,7 @@ $errors = [];
                 <?= $error ?>
             </div>
         <?php } ?>
-        <div class="card p-4 w-50">
+        <div class="">
             <form method="POST" class="leformulaire">
             <!--titre article-->
                 <div class="mb">
