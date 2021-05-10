@@ -56,7 +56,7 @@ $errors = [];
 
     <!---------------------------------------->
       <div class="container d-flex flex-column align-items-center">
-        <h1>Créer un article</h1>
+        <h1>Créer un article</h1><br>
         <?php foreach($errors as $error){ ?>
             <div class="alert alert-warning">
                 <?= $error ?>
@@ -67,11 +67,11 @@ $errors = [];
             <!--titre article-->
                 <div class="mb">
                     <input type="text" placeholder="Titre de l'article" name="titreArticle">   
-                </div>
+                </div><br>
                 <!--Contenu-->
                 <div>
                     <textarea name="contenuArticle" id="" cols="30" rows="10"></textarea>
-                </div>
+                </div><br>
 
                 <!--categorie-->
             <div class="deplacer">   
@@ -95,12 +95,12 @@ $errors = [];
                         <option>Fudge</option>
                         <option>Sugar</option>
                         <option>Fruits</option>
-                    </select>
+                    </select><br>
                <!-- </div>  -->  
                
                <div class="btnform">
-                <button type="submit" class="btn btn-outline-info" id="btnpublier">Publier</button>
-                <button type="submit" class="btn btn-outline-warning" id=btnsauvegarder>Sauvegarder</button>
+                <button type="submit" class="btn btn-outline-info" id="btnpublier">Publier</button>&nbsp;&nbsp;
+                <button type="submit" class="btn btn-outline-warning" id=btnsauvegarder>Sauvegarder</button>&nbsp;&nbsp;
                </div>
             </div>     
         

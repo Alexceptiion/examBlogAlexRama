@@ -35,6 +35,8 @@ if(isset($_GET['id'])){
 //     $errors[] = "C'est vachement pas sympas SUR 20";
 // }
 
+
+
 // Reception du formulaire modify
 if($_SERVER["REQUEST_METHOD"] === "POST"){
     if(isset($_POST["idArticle"])){
@@ -110,11 +112,11 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 <div class="mb">
                     <input type="text" placeholder="Titre de l'article" name="titreArticle" value="<?= $valueTitre; ?>">   
                     <input type="hidden" name="idArticle" value="<?= $valueIdArticle; ?>">
-                </div>
+                </div><br>
                 <!--Contenu-->
                 <div>
                     <textarea name="contenuArticle" placeholder="Contenu" id="" cols="30" rows="10"><?= $valueArea; ?></textarea>
-                </div>
+                </div><br>
 
                 <!--categorie-->
             <div deuxiemepartie>  
@@ -127,7 +129,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                         <option>Sweets</option>
                         <option>Lolipop</option>
                     </select>
-                </div>
+                </div><br>
 
                  <!--Tag-->
                  <div>
@@ -139,12 +141,12 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                         <option>Sugar</option>
                         <option>Fruits</option>
                     </select>
-                </div>    
+                </div><br>    
                
                <div>
-                <button type="submit" class="btn btn-outline-info" id="publierbtn">Publier</button>
-                <button type="submit" class="btn btn-outline-success" id="sauvegarderbtn">Sauvegarder</button>
-                <a class="btn btn-outline-danger" href="delete.php?id=<?= $valueIdArticle ?>" id="supprimerbtn">Supprimer</a>
+                <button type="submit" class="btn btn-outline-info" id="publierbtn">Publier</button>&nbsp;&nbsp;
+                <button type="submit" class="btn btn-outline-success" id="sauvegarderbtn">Sauvegarder</button>&nbsp;&nbsp;
+                <a class="btn btn-outline-danger" href="delete.php?id=<?= $valueIdArticle ?>" id="supprimerbtn">Supprimer</a>&nbsp;&nbsp;
                </div>
             </div>      
 
