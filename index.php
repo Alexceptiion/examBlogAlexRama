@@ -19,7 +19,7 @@ $blog = $stmt->fetchAll();
 </head>
 <body>
    <div class="container">
-        <div class="d-flex justify-content-between mt-3 mb-3">
+        <div class="d-flex justify-content-between mt-3 mb-3">       
             <h1>Liste d'articles</h1>
             <a class="btn btn-outline-primary" href="formulaire.php" id="btncreer">+ Créer</a>
         </div>

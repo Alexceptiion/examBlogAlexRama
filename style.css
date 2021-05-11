@@ -39,7 +39,7 @@ th {
   -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
 }
-#publierbtn .deuxiemepartie {
+#publierbtn {
   float: right;
 }
 .deplacer {
@@ -53,7 +53,7 @@ th {
 h1 {
   font-family: "Kdam Thmor", cursive;
 }
-input {
+/* input {
   position: relative;
   width: 150%;
   right: 120px;
@@ -62,11 +62,25 @@ textarea {
   position: relative;
   width: 150%;
   right: 120px;
-}
-.btnform {
+} */
+/* .btnform {
   position: relative;
   left: 250px;
   bottom: 418px;
   height: 110px;
   border: 1px solid black;
 }
+.btnmodify {
+  position: relative;
+  left: 250px;
+  bottom: 418px; NE JAMAIS FAIRE AVEC DES VALEURS TEUUUUBER VA
+  height: 110px;
+  border: 1px solid black;
+}
+.deuxiemepartie {
+  position: relative;
+  left: 250px;
+  bottom: 418px;
+  height: 110px;
+  border: 1px solid black;
+} */
