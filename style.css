@@ -3,7 +3,7 @@ td,
 th {
   border: 1px solid black;
 } */
-#btncreer {
+/* #btncreer {
   box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
@@ -51,8 +51,8 @@ th {
   border: 1px solid black;
 }
 h1 {
-  font-family: "Kdam Thmor", cursive;
-}
+  font-family: "Kdam Thmor", cursive; */
+/*}
 /* input {
   position: relative;
   width: 150%;

@@ -6,11 +6,12 @@ $errors = [];
 
 // On verifie que la methode post existe, si elle existe on execute la requete
  if($_SERVER["REQUEST_METHOD"] === "POST"){
-     if(existPOST("titreArticle")){
+     if(existPOST("titreArticle") && existPOST("idTags")){
         $sql = "INSERT INTO `article` 
-        (titreArticle, dateCreationArticle, statutArticle, contenuArticle,  idCategorie) 
-        VALUES (:titreArticle, CURDATE(), :statutArticle, 'area',
-        (SELECT idCategorie FROM categorie WHERE nomCategorie = :nomCategorie))";
+        (titreArticle, dateCreationArticle, statutArticle, contenuArticle,  idCategorie, idTags) 
+        VALUES (:titreArticle, CURDATE(), :statutArticle, 'area', :idTags)";
+       ("SELECT idCategorie FROM categorie WHERE nomCategorie = :nomCategorie,
+        SELECT idArticle FROM article LEFT JOIN tag ON contenir.idArticle = idTags");
 
         $stmt = $db->prepare($sql);
         $res = $stmt->execute([
@@ -18,8 +19,8 @@ $errors = [];
            //":contenuArticle" => htmlspecialchars($_POST["contenuArticle"]),
            //"dateCreationArticle" => $_POST["dateCreationArticle"],
            "statutArticle" => htmlspecialchars($_POST["statutArticle"]),
-           ":nomCategorie" => htmlspecialchars($_POST["nomCategorie"])
-           //':idTag' => htmlspecialchars($_POST["idTag"])
+           ":nomCategorie" => htmlspecialchars($_POST["nomCategorie"]),
+           ":idTags" => htmlspecialchars($_POST["idTags"])
         ]);
 
     // on verifie si la reponse est vrai ou fausse
@@ -36,7 +37,8 @@ $errors = [];
     // modify
     if(isset($_GET['id'])){
         $idArticleToEdit = $_GET["id"];
-        $stmt = $db->prepare("SELECT * from article WHERE idArticle = :idArticleToEdit;");
+        $stmt = $db->prepare("SELECT * from article WHERE idArticle = :idArticleToEdit;
+        LEFT JOIN tag ON article.idArticle = tag.idArticle");
         $stmt->execute([
             ':idArticleToEdit' => $idArticleToEdit
          ]);
@@ -53,7 +55,7 @@ $errors = [];
     <title>Créer un article</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 
 <body>
@@ -116,8 +118,8 @@ $errors = [];
             <!--Tag-->
             <!--  <div> -->
             <label for="">Tags</label><br />
-            <select name="idTag" id="">
-                <option value="">Choisir un Tag</option>
+            <select name="idTags" id="">
+                <option value="idTags">Choisir un Tag</option>
                 <option>Jelly</option>
                 <option>Fudge</option>
                 <option>Sugar</option>
